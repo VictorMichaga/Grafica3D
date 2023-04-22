@@ -18,9 +18,9 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 496
-    Top = 288
+    Top = 280
     Width = 47
-    Height = 13
+    Height = 17
     Caption = 'Elevacion'
   end
   object ejex: TLabel

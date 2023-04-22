@@ -28,7 +28,7 @@ typedef struct {
    int dib;
 } VTX;
 int maxvtx=18;
-VTX lista[10000]={{   0,   0,  0,0} ,
+VTX lista[100000]={{   0,   0,  0,0} ,
                  { 100,   0,  0,1},
                  { 100, 100,  0,1},
                  {   0, 100,  0,1},
@@ -412,7 +412,7 @@ void __fastcall TForm1::Button19Click(TObject *Sender)
    }
 }
 //---------------------------------------------------------------------------
-
+//EXTRUIR
 void __fastcall TForm1::Button20Click(TObject *Sender)
 {
     // copiar datos en eje z =100
@@ -420,7 +420,16 @@ void __fastcall TForm1::Button20Click(TObject *Sender)
     for (int i=0;i<maxvtx;i++)
     {
        lista[maxvtx+i]=lista[i];
-       lista[maxvtx+i].z=100;
+       //plano x
+       if(EJE->ItemIndex==0)
+       lista[maxvtx+i].x=Edit2->Text.ToInt();
+       //plano y
+       if(EJE->ItemIndex==1)
+       lista[maxvtx+i].y=Edit2->Text.ToInt();
+       //plano z
+       if(EJE->ItemIndex==2)
+       lista[maxvtx+i].z=Edit2->Text.ToInt();
+
     }
     maxvtx=2*maxvtx;
     for (int i=0;i<dato;i++)
@@ -429,14 +438,23 @@ void __fastcall TForm1::Button20Click(TObject *Sender)
        lista[maxvtx].dib=0;
        maxvtx++;
        lista[maxvtx]=lista[i];
-       lista[maxvtx].z=100;
+       //plano x
+       if(EJE->ItemIndex==0)
+       lista[maxvtx].x=Edit2->Text.ToInt();
+       //plano y
+       if(EJE->ItemIndex==1)
+       lista[maxvtx].y=Edit2->Text.ToInt();
+       //plano z
+       if(EJE->ItemIndex==2)
+       lista[maxvtx].z=Edit2->Text.ToInt();
+
        lista[maxvtx].dib=1;
        maxvtx++;
     }
     Repaint();
 }
 //---------------------------------------------------------------------------
-
+//REVOLUCION
 void __fastcall TForm1::Button21Click(TObject *Sender)
 {
     //dibujar una circunferencia
@@ -448,6 +466,7 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
          lista[maxvtx].x=lista[i].x*cos(ang*3.141516/180);
          lista[maxvtx].y=lista[i].y;
          lista[maxvtx].z=lista[i].x*sin(ang*3.141516/180);
+
          lista[maxvtx].dib=(ang==0)?0:1;
          maxvtx++;
       }
@@ -466,4 +485,5 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
     Repaint();
 }
 //---------------------------------------------------------------------------
+
 

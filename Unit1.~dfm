@@ -1,8 +1,8 @@
 object Form1: TForm1
   Left = 192
   Top = 124
-  Width = 682
-  Height = 516
+  Width = 680
+  Height = 659
   Caption = 'Form1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,7 +25,7 @@ object Form1: TForm1
   end
   object ejex: TLabel
     Left = 32
-    Top = 408
+    Top = 544
     Width = 10
     Height = 24
     Caption = '0'
@@ -38,7 +38,7 @@ object Form1: TForm1
   end
   object ejey: TLabel
     Left = 104
-    Top = 408
+    Top = 544
     Width = 10
     Height = 24
     Caption = '0'
@@ -48,6 +48,13 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 472
+    Top = 384
+    Width = 127
+    Height = 13
+    Caption = 'ALTURA DE EXTRUCION'
   end
   object Button1: TButton
     Left = 464
@@ -215,8 +222,8 @@ object Form1: TForm1
     OnClick = Button16Click
   end
   object Button17: TButton
-    Left = 528
-    Top = 448
+    Left = 464
+    Top = 472
     Width = 75
     Height = 25
     Caption = 'circulos'
@@ -225,7 +232,7 @@ object Form1: TForm1
   end
   object Button18: TButton
     Left = 464
-    Top = 376
+    Top = 440
     Width = 75
     Height = 25
     Caption = 'Cargar'
@@ -234,7 +241,7 @@ object Form1: TForm1
   end
   object Button19: TButton
     Left = 544
-    Top = 376
+    Top = 440
     Width = 75
     Height = 25
     Caption = 'Grabar'
@@ -242,22 +249,30 @@ object Form1: TForm1
     OnClick = Button19Click
   end
   object Button20: TButton
-    Left = 472
-    Top = 408
+    Left = 464
+    Top = 400
     Width = 75
     Height = 25
-    Caption = 'elevar'
+    Caption = 'Extruir'
     TabOrder = 21
     OnClick = Button20Click
   end
   object Button21: TButton
-    Left = 552
-    Top = 408
+    Left = 544
+    Top = 472
     Width = 75
     Height = 25
-    Caption = 'revolve'
+    Caption = 'Revolucion'
     TabOrder = 22
     OnClick = Button21Click
+  end
+  object Edit2: TEdit
+    Left = 544
+    Top = 400
+    Width = 57
+    Height = 21
+    TabOrder = 23
+    Text = '0'
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = 'txt'

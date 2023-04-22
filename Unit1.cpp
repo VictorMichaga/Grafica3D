@@ -463,10 +463,24 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
     {
       for (int ang=0;ang<=360;ang+=10)
       {
+         //cuando se dibuja en el eje x
+         if(EJE->ItemIndex==0){
+         lista[maxvtx].x=lista[i].y*sin(ang*3.141516/180);
+         lista[maxvtx].y=lista[i].y*cos(ang*3.141516/180);
+         lista[maxvtx].z=lista[i].z;
+         }
+         //cuando se dibuja en y
+         if(EJE->ItemIndex==1){
+         lista[maxvtx].x=lista[i].x;
+         lista[maxvtx].y=lista[i].z*cos(ang*3.141516/180);
+         lista[maxvtx].z=lista[i].z*sin(ang*3.141516/180);
+         }
+         //cuando se dibuja en z
+         if(EJE->ItemIndex==2){
          lista[maxvtx].x=lista[i].x*cos(ang*3.141516/180);
          lista[maxvtx].y=lista[i].y;
          lista[maxvtx].z=lista[i].x*sin(ang*3.141516/180);
-
+         }
          lista[maxvtx].dib=(ang==0)?0:1;
          maxvtx++;
       }
@@ -475,9 +489,24 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
     {
       for (int i=0;i<dato;i++)
       {
+         //cuando se dibuja en el eje x
+         if(EJE->ItemIndex==0){
+         lista[maxvtx].x=lista[i].y*sin(ang*3.141516/180);
+         lista[maxvtx].y=lista[i].y*cos(ang*3.141516/180);
+         lista[maxvtx].z=lista[i].z;
+         }
+         //cuando se dibuja en el eje y
+         if(EJE->ItemIndex==1){
+         lista[maxvtx].x=lista[i].x;
+         lista[maxvtx].y=lista[i].z*cos(ang*3.141516/180);
+         lista[maxvtx].z=lista[i].z*sin(ang*3.141516/180);
+         }
+         //cuando se dibuja en el eje z
+         if(EJE->ItemIndex==2){
          lista[maxvtx].x=lista[i].x*cos(ang*3.141516/180);
          lista[maxvtx].y=lista[i].y;
          lista[maxvtx].z=lista[i].x*sin(ang*3.141516/180);
+         }
          lista[maxvtx].dib=(i==0)?0:1;
          maxvtx++;
       }
